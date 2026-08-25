@@ -88,7 +88,7 @@ export const TEMPLATES = [
     categoryLabel: "BASIC #1",
     description: "Minimal, classy, dan timeless dengan nuansa gelap yang elegan.",
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800",
-    demoUrl: "https://wed-inv-basic1.vercel.app/",
+    demoUrl: "https://wedding-invitation-b2.vercel.app/",
     tag: "Dark Mode"
   },
   {
@@ -98,7 +98,7 @@ export const TEMPLATES = [
     categoryLabel: "BASIC #2",
     description: "Warm, soft, dan romantic dengan sentuhan warna cream & dusty rose.",
     image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=800",
-    demoUrl: "https://wedding-invitation-b2.vercel.app/",
+    demoUrl: "https://wed-inv-basic1.vercel.app/",
     tag: "Soft Mode"
   },
   {
