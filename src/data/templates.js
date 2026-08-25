@@ -1,7 +1,27 @@
 // src/data/templates.js
 
 export const WHATSAPP_NUMBER = "6285891126071";
-export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Halo%20LUME,%20saya%20ingin%20tanya%20tentang%20undangan%20digital`;
+
+// Default general inquiry
+export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+`Halo LUME! 👋
+
+Saya tertarik dengan undangan digital LUME.
+Mohon info langkah selanjutnya. Terima kasih! 💍`
+)}`;
+
+// Pre-filled template order message generator
+export const getWhatsAppPackageLink = (packageName) => {
+  const text = 
+`Halo LUME! 👋
+
+Saya tertarik untuk pesan undangan digital LUME.
+Paket yang saya minati: ${packageName}
+
+Mohon info langkah pemesanan dan pengisian datanya. Terima kasih! 💍`;
+
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+};
 
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/lulbiasalah/",
@@ -79,7 +99,7 @@ export const TEMPLATES = [
     categoryLabel: "BASIC #1",
     description: "Minimal, classy, dan timeless dengan nuansa gelap yang elegan.",
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800",
-    demoUrl: "https://wedding-invitation-b2.vercel.app/",
+    demoUrl: "https://wed-inv-basic1.vercel.app/",
     tag: "Dark Mode"
   },
   {
@@ -89,7 +109,7 @@ export const TEMPLATES = [
     categoryLabel: "BASIC #2",
     description: "Warm, soft, dan romantic dengan sentuhan warna cream & dusty rose.",
     image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=800",
-    demoUrl: "https://wed-inv-basic1.vercel.app/",
+    demoUrl: "https://wedding-invitation-b2.vercel.app/",
     tag: "Soft Mode"
   },
   {
