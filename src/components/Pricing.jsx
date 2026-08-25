@@ -1,5 +1,5 @@
 import React from 'react';
-import { PACKAGES } from '../data/templates';
+import { PACKAGES, getWhatsAppPackageLink } from '../data/templates';
 
 export default function Pricing() {
   const handleScrollToTemplate = (e) => {
@@ -71,20 +71,32 @@ export default function Pricing() {
                 </ul>
               </div>
 
-              {/* Action Button */}
-              <div className="pt-8 mt-6 border-t border-lume-charcoal/5 space-y-3">
+              {/* Action Buttons */}
+              <div className="pt-8 mt-6 border-t border-lume-charcoal/5 space-y-2.5">
+                {/* Button 1: Pesan via WhatsApp (Direct Pre-filled Package Message) */}
                 <a
-                  href="#template"
-                  onClick={handleScrollToTemplate}
+                  href={getWhatsAppPackageLink(pkg.name)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`block w-full text-center py-3.5 text-xs font-semibold tracking-[0.15em] uppercase rounded-full transition-all duration-300 ${
                     pkg.popular
                       ? 'bg-lume-rose text-white hover:bg-lume-charcoal shadow-sm'
                       : 'bg-lume-charcoal text-lume-bg hover:bg-lume-rose'
                   }`}
                 >
-                  {pkg.buttonText}
+                  💬 {pkg.buttonText || `Pesan Paket ${pkg.name}`}
+                </a>
+
+                {/* Button 2: Scroll Halus ke Katalog Template */}
+                <a
+                  href="#template"
+                  onClick={handleScrollToTemplate}
+                  className="block w-full text-center py-2 text-[11px] font-medium tracking-[0.1em] text-lume-taupe hover:text-lume-rose uppercase transition-colors"
+                >
+                  {pkg.secondaryButtonText || 'Lihat Template'} ↓
                 </a>
               </div>
+
             </div>
           ))}
         </div>

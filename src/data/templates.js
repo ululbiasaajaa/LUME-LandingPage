@@ -2,25 +2,15 @@
 
 export const WHATSAPP_NUMBER = "6285891126071";
 
-// Default general inquiry
+// Default WhatsApp Link (General Inquiry)
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-`Halo LUME! 👋
-
-Saya tertarik dengan undangan digital LUME.
-Mohon info langkah selanjutnya. Terima kasih! 💍`
+  "Halo LUME!\n\nSaya tertarik dengan undangan digital LUME.\nMohon info langkah selanjutnya. Terima kasih!"
 )}`;
 
-// Pre-filled template order message generator
+// Dynamic WhatsApp Link berdasarkan nama paket yang dipilih
 export const getWhatsAppPackageLink = (packageName) => {
-  const text = 
-`Halo LUME! 👋
-
-Saya tertarik untuk pesan undangan digital LUME.
-Paket yang saya minati: ${packageName}
-
-Mohon info langkah pemesanan dan pengisian datanya. Terima kasih! 💍`;
-
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  const message = `Halo LUME!\n\nSaya tertarik untuk memesan undangan digital LUME paket *${packageName}*.\nMohon info langkah pemesanan dan pengisian datanya. Terima kasih!`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 };
 
 export const SOCIAL_LINKS = {
@@ -46,13 +36,12 @@ export const PACKAGES = [
       "Petunjuk lokasi (Google Maps)",
       "Custom data pasangan & acara"
     ],
-    buttonText: "Lihat Template Basic",
-    targetSection: "#template"
+    buttonText: "Pesan Paket Basic",
+    secondaryButtonText: "Lihat Template",
   },
   {
     id: "premium",
     name: "PREMIUM",
-    price: "Rp99.000",
     normalPrice: "Rp149.000",
     launchPrice: "Rp99.000",
     tagline: "More immersive, richer experience.",
@@ -68,8 +57,8 @@ export const PACKAGES = [
       "Galeri foto interaktif & layout sinematik",
       "Animasi & transisi lebih kaya"
     ],
-    buttonText: "Lihat Template Premium",
-    targetSection: "#template"
+    buttonText: "Pesan Paket Premium",
+    secondaryButtonText: "Lihat Template",
   },
   {
     id: "custom",
@@ -86,8 +75,8 @@ export const PACKAGES = [
       "Custom section & fitur khusus",
       "Struktur komponen React fleksibel & interaktif"
     ],
-    buttonText: "Lihat Showcase Custom",
-    targetSection: "#template"
+    buttonText: "Pesan Paket Custom",
+    secondaryButtonText: "Lihat Showcase",
   }
 ];
 
